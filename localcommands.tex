@@ -1,0 +1,61 @@
+%add all your local new commands to this file
+
+\newcommand{\smiley}{:)}
+
+\renewbibmacro*{index:name}[5]{%
+  \usebibmacro{index:entry}{#1}
+    {\iffieldundef{usera}{}{\thefield{usera}\actualoperator}\mkbibindexname{#2}{#3}{#4}{#5}}}
+
+\newcommand{\un}[1]{$_{\mbox{\scriptsize{#1}}}$} %defines \un as a textmode subscript
+\newcommand{\uncnst}[1]{$_{\mbox{\textsf{\tiny{\MakeUppercase{#1}}}}}$}
+
+\DeclareMathSymbol{\Alpha}{\mathalpha}{operators}{"41}
+\DeclareMathSymbol{\Mu}{\mathalpha}{operators}{"4D}
+\DeclareMathSymbol{\Chi}{\mathalpha}{operators}{"58}
+
+\newcommand{\cnst}[1]{\textsf{\small{\MakeUppercase{#1}}}}
+
+
+% defining \rightlsquigarrow from MnSymbol
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA} {U} {MnSymbolA}{m}{n}
+
+\DeclareMathSymbol{\rightlsquigarrow}{\mathrel}{MnSyA}{160}
+
+
+% macros for citations:
+
+\newcommand{\citeposst}[1]{\citeauthor{#1}'s (\citeyear{#1})} % produces Chomsky's (1995)
+\newcommand{\citeposstpg}[2]{\citeauthor{#1}'s (\citeyear[#2]{#1})} % produces Chomsky's (1995: page)
+\newcommand{\citepossalt}[1]{\citeauthor{#1}'s \citeyear{#1}} % produces Chomsky's 1995
+\newcommand{\citepossaltpg}[2]{\citeauthor{#1}'s \citeyear[#2]{#1}} % produces Chomsky's 1995: page
+
+% math
+
+% \setmathfont{Libertinus Math}
+
+% keywords
+
+\newcommand{\keywords}[1]{\textbf{Keywords:} {#1}}
+
+% pagenumbering preprint
+
+\pagenumbering{roman}
